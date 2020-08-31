@@ -30,7 +30,6 @@ function t2() {
     }
 
     document.querySelector('.out-2').innerHTML = numbers.join(' ');
-
 }
 
 document.querySelector('.b-2').onclick = t2;
@@ -49,7 +48,6 @@ function t3() {
     }
 
     document.querySelector('.out-3').innerHTML = numbers.join(' ');
-
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -212,7 +210,14 @@ document.querySelector('.b-10').onclick = t10;
 
 
 function t11() {
+    const divArray = document.querySelectorAll('.div-11')
+    const results = [];
 
+    for (let i = 0; i < divArray.length; i++) {
+        results.push(divArray[i]);
+    }
+
+    document.querySelector('.out-11').innerHTML = results.join(' ');
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -225,7 +230,11 @@ document.querySelector('.b-11').onclick = t11;
 
 
 function t12() {
+    const divArray = document.querySelectorAll('.div-12')
 
+    for (let i = 0; i < divArray.length; i++) {
+        divArray[i].style.background = 'orange';
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -237,7 +246,11 @@ document.querySelector('.b-12').onclick = t12;
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
 function t13() {
+    const inputArray = document.querySelectorAll('.i-13')
 
+    for (let i = 0; i < inputArray.length; i++) {
+        inputArray[i].value = i + 1;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -250,7 +263,14 @@ document.querySelector('.b-13').onclick = t13;
 
 
 function t14() {
+    const radioButtonsArray = document.querySelectorAll('.i-14')
+    let checkedRadioButton;
 
+    for (let i = 0; i < radioButtonsArray.length; i++) {
+        if (radioButtonsArray[i].checked) checkedRadioButton = i;
+    }
+
+    document.querySelector('.out-14').innerHTML = radioButtonsArray[checkedRadioButton].value;
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -262,7 +282,15 @@ document.querySelector('.b-14').onclick = t14;
 // Подсказка (10 - i) + ' ' + i
 
 function t15() {
+    const numbers = [];
+    let secondNumber = 0;
 
+    for (let i = 10; i >= 0; i--) {
+        numbers.push(i, secondNumber);
+        secondNumber++;
+    }
+
+    document.querySelector('.out-15').innerHTML = numbers.join(' ');
 }
 
 document.querySelector('.b-15').onclick = t15;

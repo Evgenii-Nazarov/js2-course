@@ -54,8 +54,11 @@ document.querySelector('.b-3').onclick = f3;
 // Task 4. Создайте на странице input[type=number] с классом i-4, куда пользователь может ввести год своего рождения. Есть кнопка b-4 которая запускает функцию f4. Функция должна вывести в  .out-4 число 1 если пользователю больше или равно 18 лет, и 0 если меньше.
 
 function f4() {
-    const inputValue = +document.querySelector('input.i-4').value;
-    document.querySelector('.out-4').innerHTML = inputValue >= 18 ? 1 : 0;
+    const yearOfBirth = +document.querySelector('input.i-4').value;
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - yearOfBirth;
+
+    document.querySelector('.out-4').innerHTML = age >= 18 ? 1 : 0;
 }
 
 document.querySelector('.b-4').onclick = f4;
@@ -75,7 +78,7 @@ document.querySelector('.b-5').onclick = f5;
 
 function f6() {
     const inputValue = +document.querySelector('input.i-6').value;
-    document.querySelector('.out-6').innerHTML = inputValue % 2 ? 'нечетное' : 'четное';
+    document.querySelector('.out-6').innerHTML = inputValue % 2 ? 'odd' : 'even';
 
 }
 
