@@ -214,7 +214,7 @@ function t11() {
     const results = [];
 
     for (let i = 0; i < divArray.length; i++) {
-        results.push(divArray[i]);
+        results.push(divArray[i].textContent);
     }
 
     document.querySelector('.out-11').innerHTML = results.join(' ');
