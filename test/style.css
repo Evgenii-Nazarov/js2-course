@@ -1,0 +1,23 @@
+.out {
+    height: 150px;
+    background-color: powderblue;
+}
+
+.out-1 {
+    background-color: blue;
+    height: 150px;
+    text-align:center
+}
+
+.test {
+    border: 2px solid red;
+}
+
+div {
+    min-width: 500px;
+}
+
+input {
+    color: #8bc34a;
+    background-color: #ff9800;
+}
