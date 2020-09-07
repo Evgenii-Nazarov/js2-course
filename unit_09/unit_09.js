@@ -44,7 +44,7 @@ document.querySelector('.b-4').onclick = f4;
 // По нажатию b-5 запускайте функцию f5, которая проверяет наличие класса bg-4 у блока out-4 (да, именно bg-4 у out-4 ). Результат - true или false, выводите в out-5.
 
 function f5() {
-    document.querySelector('div.out-5').innerHTML = document.querySelector('div.out-4').classList.contains('bg-4'); //надо приводить к строке??
+    document.querySelector('div.out-5').innerHTML = String(document.querySelector('div.out-4').classList.contains('bg-4')); //надо приводить к строке??
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -54,7 +54,7 @@ document.querySelector('.b-5').onclick = f5;
 // По нажатию b-6 запускайте функцию f6, которая выводит в out-6 количество параграфов с классом p-6.
 
 function f6() {
-    document.querySelector('div.out-6').innerHTML = document.querySelectorAll('p.p-6').length
+    document.querySelector('div.out-6').innerHTML = String(document.querySelectorAll('p.p-6').length)
     //надо приводить к строке??;
 }
 
@@ -213,9 +213,7 @@ document.querySelector('.b-17').onclick = f17;
 // Добавьте кнопку .b-18, которая запускает функцию f18. Функция с помощью getAttribute получает data-b атрибут с параграф p-18 и выводит в out-18.
 
 function f18() {
-    const dataAtt = document.querySelector('p.p-18').getAttribute('data-b');
-
-    document.querySelector('div.out-18').innerHTML = dataAtt;
+    document.querySelector('div.out-18').innerHTML = document.querySelector('p.p-18').getAttribute('data-b');
 }
 
 document.querySelector('.b-18').onclick = f18;
