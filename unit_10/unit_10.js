@@ -1,7 +1,7 @@
 // Task 1
 //Создайте массив ar1 содержащий строки, числа, булевы значения. Выведите его в .out-1. Вывод - по нажатию кнопки b-1
 
-const ar1 = ['Hello', 'Bye', 156, 18, true, false];
+let ar1 = ['Hello', 'Bye', 156, 18, true, false];
 
 function f1() {
     document.querySelector('div.out-1').innerHTML = ar1;
@@ -12,7 +12,7 @@ document.querySelector('.b-1').onclick = f1;
 // Task 2
 //Создайте массив ar2 содержащий строки, числа, булевы значения. Выведите его в div.out-2. Используйте шаблон вывода из кода в JS. Вывод - по нажатию кнопки b-2
 
-const ar2 = ['Hello', 'Bye', 156, 18, true, false];
+let ar2 = ['Hello', 'Bye', 156, 18, true, false];
 
 function f2() {
     let out = '';
@@ -30,7 +30,7 @@ document.querySelector('.b-2').onclick = f2;
 // Вывод в out-3
 // Тест допустим массив [1,2,3] вывод - 3
 
-const ar3 = ['Hello', 'Bye', 156, 18, true, false];
+let ar3 = ['Hello', 'Bye', 156, 18, true, false];
 
 function f3() {
     document.querySelector('.out-3').innerHTML = ar3.length;
@@ -45,7 +45,7 @@ document.querySelector('.b-3').onclick = f3;
 // Вывод в out-4
 // Тест допустим массив [1,2,3,4,5,6,7,8,9,10] вывод: 1 4 9
 
-const ar4 = ['Hello', 'Bye', 156, 18, true, false];
+let ar4 = ['Hello', 'Bye', 156, 18, true, false];
 
 function f4() {
     document.querySelector('.out-4').innerHTML = `${ar4[0]} ${ar4[3]} ${ar4[8]}`;
