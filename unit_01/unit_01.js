@@ -37,7 +37,7 @@ document.getElementById('one').innerHTML = 'Hello World';
 // Task 7.
 // Создайте на странице div с id=two. С помощью document.getElementById запишите в данный элемент результат умножения 12 на 12. Умножение можно сделать с помощью знака звездочки ( цифра 8).
 
-document.getElementById('two').innerHTML = 12 * 12;
+document.getElementById('two').innerHTML = String(12 * 12);
 
 // Task 8.
 // Создайте div с классом one. С помощью document.querySelector запишите в данный элемент текст 'Hello World'.
@@ -66,7 +66,7 @@ document.querySelector('.four').innerHTML += '<p>!!!</p>';
 // Создайте параграф с классом five. Получите его в переменную a. С помощью innerHTML запишите внутрь переменной a число 3.1415. Изучите как в JS пишутся дроби - через точку или через запятую!
 
 const a = document.querySelector('.five');
-a.innerHTML = 3.1415;
+a.innerHTML = String(3.1415);
 
 // Task 13.
 // Создайте div с классом seven. Получите его в переменную div7. С помощью innerHTML запишите в него строку:
@@ -82,7 +82,7 @@ div7.innerHTML = '<img src="https://cdn4.iconfinder.com/data/icons/food-and-drin
 const z1 = 6;
 const z2 = 3;
 
-document.querySelector('.multiply').innerHTML = z1 * z2;
+document.querySelector('.multiply').innerHTML = String(z1 * z2);
 
 // Task 15.
 // Создайте две переменных y1 = 6, y2 = 3. Создайте div, класс присвойте самостоятельно, выведите в него деление y1 на y2.
@@ -90,7 +90,7 @@ document.querySelector('.multiply').innerHTML = z1 * z2;
 const y1 = 6;
 const y2 = 3;
 
-document.querySelector('.divide').innerHTML = y1 / y2;
+document.querySelector('.divide').innerHTML = String(y1 / y2);
 
 // Task 16.
 // Создайте две переменные x1='Hello', x2 = 5. Создайте div, класс присвойте самостоятельно, выведите в него сумму x1 + x2. Изучите результат операции.
@@ -113,7 +113,7 @@ let d2 = document.querySelector('.test-2');
 
 console.log('Before', d2); // магия, не иначе... не понял, почему. Заполнение DOM работает быстрее консоли?
 
-d2.innerHTML = 5;
+d2.innerHTML = String(5);
 console.log('After', d2);
 
 d2 = 5;
