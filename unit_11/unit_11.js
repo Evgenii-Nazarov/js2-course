@@ -213,7 +213,10 @@ document.querySelector('.b-13').onclick = f13;
 let d14 = [];
 
 function f14() {
-    const inputValue = +document.querySelector('input.i-12').value;
+    const inputValue = +document.querySelector('input.i-14').value;
+    for (let i = 0; i < inputValue; i++) {
+        d14.push(1);
+    }
 
     showArr('.out-14', d14);
 }
@@ -229,7 +232,8 @@ document.querySelector('.b-14').onclick = f14;
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 
 function f15() {
-
+    const inputValue = +document.querySelector('input.i-15').value;
+    if (d15.indexOf(inputValue) === -1) d15.push(inputValue);
 
     showArr('.out-15', d15);
 }
@@ -247,7 +251,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-
+    d16 = d161.concat(d162);
     showArr('.out-16', d16);
 }
 
@@ -264,6 +268,17 @@ let d171 = ['a', 'b', 'c', 'd'];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
+    let k = 0;
+
+    for (let i = 0; i < d171.length; i++) {
+        d17[k] = d171[i];
+        k++;
+    }
+
+    for (let i = 0; i < d172.length; i++) {
+        d17[k] = d172[i];
+        k++;
+    }
 
     showArr('.out-17', d17);
 }
@@ -280,7 +295,8 @@ document.querySelector('.b-17').onclick = f17;
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
 
 function f18() {
-
+    const inputValue = document.querySelector('input.i-18').value;
+    document.querySelector('div.out-18').innerHTML = d18.includes(inputValue);
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -296,7 +312,13 @@ let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged'
 let maxString = '';
 
 function f19() {
+// document.querySelector('div.out-19').innerHTML = d19.sort((a,b) => b.length - a.length)[0];
 
+    d19.forEach(el => {
+            if (maxString.length < el.length) maxString = el;
+        }
+    )
+    document.querySelector('div.out-19').innerHTML = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -310,7 +332,7 @@ document.querySelector('.b-19').onclick = f19;
 let d20 = [4, 5, 6, 7, 8, 9, 10];
 
 function f20() {
-
+    document.querySelector('div.out-20').innerHTML = d20.join("''");
 }
 
 document.querySelector('.b-20').onclick = f20;
