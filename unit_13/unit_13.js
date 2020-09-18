@@ -26,10 +26,8 @@ function f2() {
         "two": "mahai",
         "five": "hi"
     };
-    console.log(a2.five)
-    let a = a2.five;
-    document.querySelector('.out-2').innerHTML = a2.five;
-    // return
+
+    return a2.five;
 }
 
 document.querySelector('.b-2').onclick = () => {
@@ -51,7 +49,8 @@ function f3() {
         "odd": "hi",
         "mix": "mix"
     };
-    // return
+
+    return a3.five + ' ' + a3.odd
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -72,9 +71,15 @@ let a4 = {
     "odd": "hi",
     "mix": "mix"
 };
-function f4() {
 
-    // return out;
+function f4() {
+    let out = '';
+
+    for (let key in a4) {
+        out += `${key} ${a4[key]} <br>`;
+    }
+
+    return out;
 }
 
 document.querySelector('.b-4').onclick = () => {
@@ -87,10 +92,12 @@ document.querySelector('.b-4').onclick = () => {
 
 function f5(arr, block) {
     let out = '';
-    // цикл
-    // формат вывода `${key} : ${arr[key]} <br>`;
-    //
-    // тут вывод в блок block
+
+    for (let key in arr) {
+        out += `${key} : ${arr[key]} <br>`;
+    }
+
+    document.querySelector(block).innerHTML = out;
 }
 
 // давайте протестируем f5
@@ -113,7 +120,12 @@ let a6 = {
 };
 
 function f6() {
+    let key = document.querySelector('input.i-61').value;
+    let value = document.querySelector('input.i-62').value;
 
+    a6[key] = value;
+
+    f5(a6, '.out-6')
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -126,9 +138,10 @@ let a7 = {
     "e": 22
 };
 
-
 function f7() {
+    let inputValue = document.querySelector('input.i-7').value;
 
+    document.querySelector('.out-7').innerHTML = a7[inputValue] ? 1 : 0;
 }
 
 document.querySelector('.b-7').onclick = f7;
@@ -142,7 +155,9 @@ let a8 = {
 };
 
 function f8() {
+    let inputValue = document.querySelector('input.i-8').value;
 
+    document.querySelector('.out-8').innerHTML = a7[inputValue] ? a7[inputValue] : 0;
 }
 
 document.querySelector('.b-8').onclick = f8;
@@ -159,7 +174,15 @@ let a9 = {
 };
 
 function f9() {
+    let inputValue = +document.querySelector('input.i-9').value;
+    let str = '';
 
+    for (let key in a9) {
+        if (a9[key] === inputValue) str += key + ' ';
+    }
+
+
+    document.querySelector('.out-9').innerHTML = str;
 }
 
 document.querySelector('.b-9').onclick = f9;
@@ -168,9 +191,11 @@ document.querySelector('.b-9').onclick = f9;
 // Давайте напишем полезную функцию f10, которая проверяет есть ли значение в ассоциативном массиве. Фукнция должна возвращать true если есть, и false если нет. Массив и значение передавать функции в качестве параметров.
 
 function f10(arr, val) {
+    for (let key in arr) {
+        if (arr[key] === val) return true
+    }
 
-    //return true;
-    //return false;
+    return false;
 }
 
 document.querySelector('.b-10').onclick = () => {
@@ -195,6 +220,11 @@ let a11 = {
 };
 
 function f11() {
+    let inputValue = document.querySelector('.i-11').value;
+
+    delete a11[inputValue];
+
+    f5(a11,'.out-11')
 }
 
 document.querySelector('.b-11').onclick = f11;
