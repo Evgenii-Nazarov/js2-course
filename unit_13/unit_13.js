@@ -50,7 +50,7 @@ function f3() {
         "mix": "mix"
     };
 
-    return a3.five + ' ' + a3.odd
+    return a3.five + ' ' + a3.odd;
 }
 
 document.querySelector('.b-3').onclick = () => {
@@ -125,7 +125,7 @@ function f6() {
 
     a6[key] = value;
 
-    f5(a6, '.out-6')
+    f5(a6, '.out-6');
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -224,7 +224,7 @@ function f11() {
 
     delete a11[inputValue];
 
-    f5(a11,'.out-11')
+    f5(a11, '.out-11');
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -241,7 +241,13 @@ let a12 = {
 };
 
 function f12() {
+    let inputValue = +document.querySelector('.i-12').value;
 
+    for (let key in a12) {
+        if (a12[key] === inputValue) delete a12[key];
+    }
+
+    f5(a12, '.out-12');
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -257,7 +263,13 @@ let a13 = {
 };
 
 function f13() {
+    let sum = 0;
 
+    for (let key in a13) {
+        if (typeof a13[key] === 'number') sum += a13[key];
+    }
+
+    document.querySelector('.out-13').innerHTML = sum;
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -274,7 +286,12 @@ let a14 = {
 };
 
 function f14() {
+    const list = [];
+    for (let key in a14) {
+        list.push(a14[key][0]);
+    }
 
+    document.querySelector('.out-14').innerHTML = list.join(' ');
 }
 
 document.querySelector('.b-14').onclick = f14;
@@ -292,7 +309,12 @@ let a15 = {
 };
 
 function f15() {
+    const list = [];
+    for (let key in a15) {
+        list.push(...a15[key]);
+    }
 
+    document.querySelector('.out-15').innerHTML = list.join(' ');
 }
 
 document.querySelector('.b-15').onclick = f15;
@@ -316,7 +338,12 @@ let a16 = {
 }
 
 function f16() {
+    const list = [];
+    for (let key in a16) {
+        list.push(a16[key].name);
+    }
 
+    document.querySelector('.out-16').innerHTML = list.join(' ');
 }
 
 document.querySelector('.b-16').onclick = f16;
@@ -341,7 +368,14 @@ let a17 = {
 }
 
 function f17() {
+    const list = [];
+    for (let key in a17) {
+        if (a17[key].age > 30) {
+            list.push(a17[key].name);
+        }
+    }
 
+    document.querySelector('.out-17').innerHTML = list.join(' ');
 }
 
 document.querySelector('.b-17').onclick = f17;
@@ -356,8 +390,17 @@ let a18 = {
 }
 
 function f18() {
+    const branchInput = document.querySelector('.i-18').value;
+    let list = '';
 
+    if (a18[branchInput]) {
+        list = a18[branchInput].join(' ');
+    }
+
+    document.querySelector('.out-18').innerHTML = list;
 }
+
+document.querySelector('.b-18').onclick = f18;
 
 // Task 19
 // При нажатии b-19 выполняете функцию f19. Функция должна в out-19 вывести цвет ветки станции которую пользователь ввел в i-19. Пользователь может вводить текст как с большой, так и с маленькой буквы. Если ветка не найдена - выводите пустую строку.
@@ -370,7 +413,16 @@ let a19 = {
 }
 
 function f19() {
+    let stationInput = document.querySelector('.i-19').value.toLowerCase();
+    let branch = '';
 
+    for (let key in a19) {
+        a19[key].forEach(el => {
+            if (el.toLowerCase() === stationInput) branch = key;
+        })
+    }
+
+    document.querySelector('.out-19').innerHTML = branch;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -385,7 +437,15 @@ let a20 = {
 }
 
 function f20() {
+    let branch = [];
 
+    for (let key in a20) {
+        a20[key].forEach(el => {
+            if (el[1] === 2) branch.push(el[0]);
+        })
+    }
+
+    document.querySelector('.out-20').innerHTML = branch.join(' ');
 }
 
 document.querySelector('.b-20').onclick = f20
