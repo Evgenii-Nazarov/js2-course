@@ -269,7 +269,7 @@ function f13() {
         if (typeof a13[key] === 'number') sum += a13[key];
     }
 
-    document.querySelector('.out-13').innerHTML = sum;
+    document.querySelector('.out-13').innerHTML = String(sum);
 }
 
 document.querySelector('.b-13').onclick = f13;
