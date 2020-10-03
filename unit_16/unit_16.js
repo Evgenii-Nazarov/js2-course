@@ -21,7 +21,13 @@ document.querySelector('.b-1').addEventListener('click', f1);
 const a2 = [5, 7, 9, 11, 13, 15];
 
 function f2() {
+    const arr = [];
 
+    for (let key in a2) {
+        arr.push(key, a2[key]);
+    }
+
+    document.querySelector('.out-2').innerHTML = arr.join(' ');
 }
 
 document.querySelector('.b-2').addEventListener('click', f2);
