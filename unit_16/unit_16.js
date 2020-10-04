@@ -39,6 +39,7 @@ document.querySelector('.b-2').addEventListener('click', f2);
 
 function f3() {
 
+
 }
 
 document.querySelector('.b-3').addEventListener('click', f3);
