@@ -136,7 +136,13 @@ document.querySelector('.b-8').addEventListener('click', f8);
 let a9 = [[4, 3, 2], [2, 5], [0, 0, 0, 0, 0]];
 
 function f9() {
+    let max = a9[0].length;
 
+    for (let el of a9) {
+        if (el.length > max) max = el.length;
+    }
+
+    document.querySelector('.out-9').innerHTML = max;
 }
 
 document.querySelector('.b-9').addEventListener('click', f9);
@@ -147,7 +153,13 @@ document.querySelector('.b-9').addEventListener('click', f9);
 let a10 = [4, 6, 9, 'Hello'];
 
 function f10() {
+    let obj = {};
 
+    for (let el of a10) {
+        obj[el] = el;
+    }
+
+    return obj;
 }
 
 document.querySelector('.b-10').addEventListener('click', () => {
@@ -165,7 +177,13 @@ let a11 = {
 }
 
 function f11() {
+    const result = [];
 
+    for (let el in a11) {
+        if (a11[el] > 10) result.push(a11[el])
+    }
+
+    document.querySelector('.out-11').innerHTML = result.join(' ');
 }
 
 document.querySelector('.b-11').addEventListener('click', f11);
@@ -176,7 +194,13 @@ document.querySelector('.b-11').addEventListener('click', f11);
 let a12 = [4, 5, 6, 7];
 
 function f12() {
+    const result = [];
 
+    for (let el of a12) {
+        result.push(el);
+    }
+
+    document.querySelector('.out-12').innerHTML = result.join(' ');
 }
 
 document.querySelector('.b-12').addEventListener('click', f12);
@@ -188,7 +212,13 @@ document.querySelector('.b-12').addEventListener('click', f12);
 let a13 = 'testone';
 
 function f13() {
+    const result = [];
 
+    for (let el of a13) {
+        result.push(el);
+    }
+
+    document.querySelector('.out-13').innerHTML = result.join(' ');
 }
 
 document.querySelector('.b-13').addEventListener('click', f13);
@@ -200,7 +230,13 @@ document.querySelector('.b-13').addEventListener('click', f13);
 let a14 = new Set([4, 5, 6]);
 
 function f14() {
+    const result = [];
 
+    for (let el of a14) {
+        result.push(el);
+    }
+
+    document.querySelector('.out-14').innerHTML = result.join(' ');
 }
 
 document.querySelector('.b-14').addEventListener('click', f14);
@@ -210,7 +246,11 @@ document.querySelector('.b-14').addEventListener('click', f14);
 
 
 function f15() {
+    const nodeList = document.querySelectorAll('.out-15');
 
+    for (let el of nodeList) {
+        el.innerHTML = 15;
+    }
 }
 
 document.querySelector('.b-15').addEventListener('click', f15);
