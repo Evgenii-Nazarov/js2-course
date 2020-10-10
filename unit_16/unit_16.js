@@ -38,7 +38,11 @@ document.querySelector('.b-2').addEventListener('click', f2);
 
 
 function f3() {
+    const arr = document.getElementsByClassName('out-3')
 
+    for (let i = 0; i < arr.length; i++) {
+        arr[i].innerHTML = 3;
+    }
 
 }
 
@@ -50,7 +54,11 @@ document.querySelector('.b-3').addEventListener('click', f3);
 
 
 function f4() {
+    const arr = document.querySelectorAll('.out-4');
 
+    for (let i = 0; i < arr.length; i++) {
+        arr[i].innerHTML += 4;
+    }
 }
 
 document.querySelector('.b-4').addEventListener('click', f4);
@@ -60,9 +68,11 @@ document.querySelector('.b-4').addEventListener('click', f4);
 // Поскольку для коллекций push запрещен - то данная операция должна вызывать ошибку. Убедитесь в этом. Чтобы экранировать ошибку и не дать ей влиять на работу документа в целом, применим try, catch.
 
 function f5() {
-    // let a5 =
+    let a5 = document.querySelectorAll('.out-5');
     try {
-        // тут делаете push
+        const newEl = document.createElement('div').classList.add('out-5');
+        a5.push(newEl);
+        // a5.push is not a function
 
     } catch (error) {
         // если будет ошибка - то просто сообщим об этом в консоль, но код продолжит работать
@@ -79,8 +89,10 @@ document.querySelector('.b-5').addEventListener('click', f5);
 let a6 = [[1, 2], [3, 4], [5, 6]];
 
 function f6() {
-
+    document.querySelector('.out-6').innerHTML = a6.flat().join(' ');
 }
+
+document.querySelector('.b-6').addEventListener('click', f6);
 
 // Task 7
 //При нажатии .b-7 выполняете функцию f7. Функция должна переиндексировать массив a7. Что имеется ввиду. Сейчас у нас обычный массив, который содержит вложенные объекты. Вам необходимо сделать из a7 объект, где ключи - значения id из вложенных массивов, а значения - имя (т.е { 23 : Ivan, 45 : Petr}
@@ -88,8 +100,15 @@ function f6() {
 let a7 = [{id: 23, name: 'Ivan'}, {id: 45, name: 'Petr'}];
 
 function f7() {
+    //я так и не придумал, как мне с помощью цикла сделать из массива объект.
+    //создал новый объект
+    let obj = {};
 
-    console.log(a7);
+    for (let el of a7) {
+        obj[el.id] = el.name
+    }
+
+    return obj
 }
 
 document.querySelector('.b-7').addEventListener('click', f7);
@@ -101,8 +120,12 @@ document.querySelector('.b-7').addEventListener('click', f7);
 let a8 = [{id: 23, name: 'Ivan'}, {id: 45, name: 'Petr'}];
 
 function f8() {
+    for (let i = 0; i < a8.length; i++) {
+        a8[i] = a8[i].id
+    }
 
-    console.loog(a8);
+    console.log(a8)
+    return a8
 }
 
 document.querySelector('.b-8').addEventListener('click', f8);
